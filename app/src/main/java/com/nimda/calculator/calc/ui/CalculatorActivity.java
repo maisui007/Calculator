@@ -106,7 +106,7 @@ public class CalculatorActivity extends Activity {
         Button buttonln = (Button) findViewById(R.id.buttonln);
 
 
-        Button btns1[] = {buttonRightArrow, buttonDiv, buttonMultiply, buttonSubtract, buttonAdd,buttonPercent,
+        Button btns1[] = {buttonRightArrow, buttonDiv, buttonMultiply, buttonSubtract, buttonAdd,
                 buttonDecimal, buttonC,buttonEquals,
                 buttonToggle,buttonLeftPar, buttonRightPar, buttonTangent, buttonCosine,
                 buttonSine, buttonSquareRoot, buttonln };
@@ -118,7 +118,6 @@ public class CalculatorActivity extends Activity {
                 buttonMultiply.setTypeface(tf, Typeface.BOLD);
                 buttonSubtract.setTypeface(tf, Typeface.BOLD);
                 buttonAdd.setTypeface(tf, Typeface.BOLD);
-                buttonPercent.setTypeface(tf, Typeface.BOLD);
                 buttonDecimal.setTypeface(tf, Typeface.BOLD);
                 buttonEquals.setTypeface(tf, Typeface.BOLD);
                 buttonC.setTypeface(tf, Typeface.BOLD);

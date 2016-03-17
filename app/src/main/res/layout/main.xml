@@ -238,13 +238,13 @@
                     android:text="@string/buttonDecimal" />
 
                 <Button
-                    android:id="@+id/buttonPercent"
+                    android:id="@+id/buttonToggleSign"
                     style="@style/NormalButton"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight=".34"
                     android:onClick="onButtonClick"
-                    android:text="@string/buttonPercent" />
+                    android:text="@string/buttonToggleSign" />
             </LinearLayout>
         </LinearLayout>
 
