@@ -121,11 +121,12 @@ public class CalculatorActivity extends Activity {
                 buttonDecimal.setTypeface(tf, Typeface.BOLD);
                 buttonEquals.setTypeface(tf, Typeface.BOLD);
                 buttonC.setTypeface(tf, Typeface.BOLD);
+                buttonToggle.setTypeface(tf, Typeface.BOLD);
+                
 
           /*
 
 
-                buttonToggle.setTypeface(tf, Typeface.BOLD);
                 buttonLeftPar.setTypeface(tf, Typeface.BOLD);
                 buttonRightPar.setTypeface(tf, Typeface.BOLD);
                 buttonSquared.setTypeface(tf, Typeface.BOLD);
