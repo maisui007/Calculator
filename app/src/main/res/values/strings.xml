@@ -11,6 +11,10 @@
 
     <!--Arithmetic Buttons-->
 
+
+    <string name="buttonRightPar">)</string>
+    <string name="buttonLeftPar">(</string>
+
     <string name="buttonToggleSign">±</string>
     <string name="buttonDiv">÷</string>
     <string name="buttonMultiply">×</string>
@@ -22,6 +26,7 @@
     <string name="buttonSquareRoot">√x</string>
     <string name="buttonSquared">x²</string>
     <string name="buttonInvert">1/x</string>
+    <string name="buttonln">ln</string>
     <string name="buttonSine">sin</string>
     <string name="buttonCosine">cos</string>
     <string name="buttonTangent">tan</string>

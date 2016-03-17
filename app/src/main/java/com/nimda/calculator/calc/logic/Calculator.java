@@ -1,17 +1,3 @@
-//   Copyright 2012 Digipom Inc.
-//
-//   Licensed under the Apache License, Version 2.0 (the "License");
-//   you may not use this file except in compliance with the License.
-//   You may obtain a copy of the License at
-//
-//       http://www.apache.org/licenses/LICENSE-2.0
-//
-//   Unless required by applicable law or agreed to in writing, software
-//   distributed under the License is distributed on an "AS IS" BASIS,
-//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//   See the License for the specific language governing permissions and
-//   limitations under the License.
-
 package com.nimda.calculator.calc.logic;
 
 import android.content.Context;
@@ -66,8 +52,6 @@ public class Calculator implements Serializable, Parcelable{
 
     private final Command sqrtCommand = new FunctionCommand(PredefinedFunction.SQRT);
     private final Command xSquaredCommand = new XSquaredCommand();
-    private final Command lnCommand = new FunctionCommand(PredefinedFunction.LN);
-
     private final Command percCommand = new OperatorCommand(Operator.PERCENT);
 
 
@@ -81,6 +65,12 @@ public class Calculator implements Serializable, Parcelable{
     private final Command ceCommand = new CeCommand();
 
     private final Command sinCommand = new FunctionCommand(PredefinedFunction.SIN);
+    private final Command cosCommand = new FunctionCommand(PredefinedFunction.COS);
+
+    private final Command tanCommand = new FunctionCommand(PredefinedFunction.TAN);
+    private final Command lnCommand = new FunctionCommand(PredefinedFunction.LN);
+
+
 
     private final Command stoCommand = new StoCommand();
     private final Command rclCommand = new RclCommand();
@@ -180,6 +170,14 @@ public class Calculator implements Serializable, Parcelable{
 
     public void selectSin(){
         sinCommand.execute();
+    }
+
+    public void selectCos(){
+        cosCommand.execute();
+    }
+
+    public void selectTan(){
+        tanCommand.execute();
     }
 
     public void selectSqrtX() {

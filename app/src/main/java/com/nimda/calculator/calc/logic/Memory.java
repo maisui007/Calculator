@@ -7,9 +7,6 @@ import com.nimda.calculator.calc.config.LoggerConfig;
 import java.math.BigDecimal;
 import java.util.Stack;
 
-/**
- * Created by Tanya on 16.03.2016.
- */
 class Memory {
     private static final String TAG = "Memory";
     private final Stack<BigDecimal> answerStack = new Stack<BigDecimal>();

@@ -13,7 +13,7 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/TextColor</item>
         <item name="android:textSize">45sp</item>
-        <item name="android:background">@color/backgroundTextViewColor</item>
+        <item name="android:background">@drawable/text_view_gradient</item>
         <item name="android:text">@string/outputTextView</item>
     </style>
 

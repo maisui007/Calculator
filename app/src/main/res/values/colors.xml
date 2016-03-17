@@ -6,9 +6,18 @@
 
     <color name="backgroundTextViewColor">#1f263e</color>
     <color name="NormalButtonColor">#0e111c</color>
-    <color name="PressedButtonColor">#141827</color>
+    <color name="PressedButtonColor">#FF0097B8</color>
+    <color name="PressedButtonColor1">#141827</color>
+
+    <color name="PressedButtonColorStroke">#141827</color>
     <color name="EquationButtonColor">#00aed3</color>
     <color name="TextColor">#d8e5f6</color>
     <color name="CButtonColor">#00aed3</color>
     <color name="backgroundLinearLayout">#141827</color>
+
+    <color name="gradient_start">#1f263e</color>
+    <color name="gradient_end">#333e63</color>
+
+    <color name="gradient_end1">#FF3C4A79</color>
+    <color name="button_gradient_end">#141827</color>
 </resources>
