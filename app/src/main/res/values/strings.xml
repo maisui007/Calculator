@@ -23,7 +23,7 @@
     <string name="buttonPercent">%</string>
     <string name="buttonEquals">=</string>
     <string name="buttonDecimal">.</string>
-    <string name="buttonSquareRoot">√x</string>
+    <string name="buttonSquareRoot">√</string>
     <string name="buttonSquared">x²</string>
     <string name="buttonInvert">1/x</string>
     <string name="buttonln">ln</string>

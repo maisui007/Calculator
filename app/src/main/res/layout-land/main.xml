@@ -20,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="right"
-            android:maxLines="2"
+            android:maxLines="1"
+            android:maxLength="20"
             android:paddingLeft="10dp"
             android:paddingRight="10dp" />
     </LinearLayout>
@@ -80,20 +81,20 @@
 
 
         <Button
-            android:id="@+id/buttonDiv"
-            style="@style/NormalButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:onClick="onButtonClick"
-            android:text="@string/buttonDiv"/>
-
-        <Button
             android:id="@+id/buttonClear"
             style="@style/CButton"
 
             android:text="@string/buttonClear"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:onClick="onButtonClick" />
+
+        <Button
+            android:id="@+id/buttonRightArrow"
+            style="@style/NormalButton"
+            android:layout_width="0dp"
+            android:text="@string/buttonRightArrow"
             android:layout_height="match_parent"
             android:layout_weight=".25"
             android:onClick="onButtonClick" />
@@ -162,15 +163,15 @@
             android:onClick="onButtonClick"
             android:text="@string/buttonMultiply"/>
 
-
         <Button
-            android:id="@+id/buttonRightArrow"
+            android:id="@+id/buttonDiv"
             style="@style/NormalButton"
             android:layout_width="0dp"
-            android:text="@string/buttonRightArrow"
             android:layout_height="match_parent"
             android:layout_weight=".25"
-            android:onClick="onButtonClick" />
+            android:onClick="onButtonClick"
+            android:text="@string/buttonDiv"/>
+
 
     </LinearLayout>
 
@@ -192,11 +193,11 @@
 
         <Button
             style="@style/NormalButton"
-            android:id="@+id/buttonSquared"
+            android:id="@+id/buttonPercent"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".25"
-            android:text="@string/buttonSquared"
+            android:text="@string/buttonPercent"
             android:onClick="onButtonClick" />
 
         <Button
@@ -237,12 +238,12 @@
 
 
         <Button
-            android:id="@+id/buttonPercent"
+            android:id="@+id/buttonAdd"
             style="@style/NormalButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".25"
-            android:text="@string/buttonPercent"
+            android:text="@string/buttonAdd"
             android:onClick="onButtonClick" />
 
     </LinearLayout>
@@ -300,14 +301,7 @@
             android:onClick="onButtonClick" />
 
 
-        <Button
-            android:id="@+id/buttonAdd"
-            style="@style/NormalButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:onClick="onButtonClick"
-            android:text="@string/buttonAdd"/>
+
 
         <Button
             android:id="@+id/buttonEquals"
@@ -315,7 +309,7 @@
             android:text="@string/buttonEquals"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".25"
+            android:layout_weight=".50"
             android:onClick="onButtonClick" />
 
     </LinearLayout>

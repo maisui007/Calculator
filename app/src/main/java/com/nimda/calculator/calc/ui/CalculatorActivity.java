@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.nimda.calculator.R;
 import com.nimda.calculator.calc.logic.Calculator;
 
+import java.text.DecimalFormat;
+
 public class CalculatorActivity extends Activity {
 
     private static final String CALCULATOR = "CALCULATOR";
@@ -23,6 +25,8 @@ public class CalculatorActivity extends Activity {
     private Calculator calculator;
     private Vibrator vibrator;
     private TextView outputView;
+
+    DecimalFormat df = new DecimalFormat("@###########");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,14 @@ public class CalculatorActivity extends Activity {
         outputView = (TextView) findViewById(R.id.outputView);
         if (outputView !=null) {
         outputView.setTypeface(tf_lite, Typeface.BOLD);}
+
+
+        df.setMinimumFractionDigits(0);
+        df.setMinimumIntegerDigits(1);
+        df.setMaximumIntegerDigits(10);
+
+
+
 
         /*
         * Numeric Buttons
@@ -86,7 +98,7 @@ public class CalculatorActivity extends Activity {
         Button buttonToggle = (Button) findViewById(R.id.buttonToggleSign);
         Button buttonLeftPar = (Button) findViewById(R.id.buttonLeftPar);
         Button buttonRightPar = (Button) findViewById(R.id.buttonRightPar);
-        Button buttonSquared = (Button) findViewById(R.id.buttonSquared);
+        //Button buttonSquared = (Button) findViewById(R.id.buttonSquared);
         Button buttonTangent = (Button) findViewById(R.id.buttonTangent);
         Button buttonCosine = (Button) findViewById(R.id.buttonCosine);
         Button buttonSine = (Button) findViewById(R.id.buttonSine);
@@ -96,7 +108,7 @@ public class CalculatorActivity extends Activity {
 
         Button btns1[] = {buttonRightArrow, buttonDiv, buttonMultiply, buttonSubtract, buttonAdd,buttonPercent,
                 buttonDecimal, buttonC,buttonEquals,
-                buttonToggle,buttonLeftPar, buttonRightPar, buttonSquared,buttonTangent, buttonCosine,
+                buttonToggle,buttonLeftPar, buttonRightPar, buttonTangent, buttonCosine,
                 buttonSine, buttonSquareRoot, buttonln };
         for (Button aBtns1 : btns1) {
             if (aBtns1 !=null) {
@@ -211,10 +223,14 @@ public class CalculatorActivity extends Activity {
                 case R.id.buttonRightPar:
                     calculator.selectRightParenthesis();
                     break;
-                case R.id.buttonSquared:
+          /*      case R.id.buttonSquared:
+                    calculator.selectSqrtX();
+                    break;*/
+                case R.id.buttonSquareRoot:
                     calculator.selectSqrtX();
                     break;
-                case R.id.buttonSquareRoot:
+                case R.id.buttonToggleSign:
+                    calculator.selectPlusMinus();
                     break;
             }
         }
@@ -233,6 +249,7 @@ public class CalculatorActivity extends Activity {
     }
 
     private void updateOutput() {
+//        outputView.setText(df.format(calculator.getExpression()));
         outputView.setText(calculator.getExpression());
     }
 
@@ -275,11 +292,17 @@ public class CalculatorActivity extends Activity {
         super.onRestoreInstanceState(savedState);
         Log.i(TAG, "onRestoreInstanceState");
         if (outputView !=null){
-        outputView.setText(calculator.getExpression());}
+
+          //  outputView.setText(df.format(calculator.getExpression()));
+
+           outputView.setText(calculator.getExpression());
+        }
         calculator = (Calculator) savedState.getSerializable(CALCULATOR);
 
         if (calculator != null) {
-            outputView.setText(calculator.getExpression());
+          outputView.setText(calculator.getExpression());
+          //  outputView.setText(df.format(calculator.getExpression()));
+
         }
     }
 }
