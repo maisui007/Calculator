@@ -1,36 +1,41 @@
 package com.nimda.calculator.calc.ui;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.nimda.calculator.R;
 import com.nimda.calculator.calc.logic.Calculator;
 
-import java.text.DecimalFormat;
 
-public class CalculatorActivity extends Activity {
+public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String CALCULATOR = "CALCULATOR";
-    private static final int VIBRATE_TIME = 20;
+    private static final int VIBRATE_TIME = 15;
     private static final String TAG = "MY_LOG";
     private Calculator calculator;
     private Vibrator vibrator;
     private TextView outputView;
 
-    DecimalFormat df = new DecimalFormat("@###########");
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
 
         Typeface tf_lite = Typeface.createFromAsset(getAssets(), "Lato-Light.ttf");
@@ -38,36 +43,66 @@ public class CalculatorActivity extends Activity {
         calculator = new Calculator(this);
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         outputView = (TextView) findViewById(R.id.outputView);
-        if (outputView !=null) {
-        outputView.setTypeface(tf_lite, Typeface.BOLD);}
+        if (outputView != null) {
+            outputView.setTypeface(tf_lite, Typeface.BOLD);
+        }
 
-
-        df.setMinimumFractionDigits(0);
-        df.setMinimumIntegerDigits(1);
-        df.setMaximumIntegerDigits(10);
-
-
-
-
-        /*
-        * Numeric Buttons
-        * */
-
-
-        Button buttonNine = (Button) findViewById(R.id.buttonNine);
-        Button buttonEight = (Button) findViewById(R.id.buttonEight);
-        Button buttonSeven = (Button) findViewById(R.id.buttonSeven);
-        Button buttonSix = (Button) findViewById(R.id.buttonSix);
-        Button buttonFive = (Button) findViewById(R.id.buttonFive);
-        Button buttonFour = (Button) findViewById(R.id.buttonFour);
-        Button buttonThree = (Button) findViewById(R.id.buttonThree);
-        Button buttonTwo = (Button) findViewById(R.id.buttonTwo);
-        Button buttonOne = (Button) findViewById(R.id.buttonOne);
         Button buttonZero = (Button) findViewById(R.id.buttonZero);
+        Button buttonOne = (Button) findViewById(R.id.buttonOne);
+        Button buttonTwo = (Button) findViewById(R.id.buttonTwo);
+        Button buttonThree = (Button) findViewById(R.id.buttonThree);
+        Button buttonFour = (Button) findViewById(R.id.buttonFour);
+        Button buttonFive = (Button) findViewById(R.id.buttonFive);
+        Button buttonSix = (Button) findViewById(R.id.buttonSix);
+        Button buttonSeven = (Button) findViewById(R.id.buttonSeven);
+        Button buttonEight = (Button) findViewById(R.id.buttonEight);
+        Button buttonNine = (Button) findViewById(R.id.buttonNine);
+
+        Button buttonRightArrow = (Button) findViewById(R.id.buttonRightArrow);
+        Button buttonDiv = (Button) findViewById(R.id.buttonDiv);
+        Button buttonMultiply = (Button) findViewById(R.id.buttonMultiply);
+        Button buttonSubtract = (Button) findViewById(R.id.buttonSubtract);
+        Button buttonAdd = (Button) findViewById(R.id.buttonAdd);
+        Button buttonDecimal = (Button) findViewById(R.id.buttonDecimal);
+        Button buttonC = (Button) findViewById(R.id.buttonClear);
+        Button buttonEquals = (Button) findViewById(R.id.buttonEquals);
+        Button buttonToggle = (Button) findViewById(R.id.buttonToggleSign);
+
+        Button buttonLeftPar = (Button) findViewById(R.id.buttonLeftPar);
+        Button buttonRightPar = (Button) findViewById(R.id.buttonRightPar);
+        Button buttonTangent = (Button) findViewById(R.id.buttonTangent);
+        Button buttonCosine = (Button) findViewById(R.id.buttonCosine);
+        Button buttonSine = (Button) findViewById(R.id.buttonSine);
+        Button buttonSquareRoot = (Button) findViewById(R.id.buttonSquareRoot);
+        Button buttonln = (Button) findViewById(R.id.buttonln);
+        Button buttonPercent = (Button) findViewById(R.id.buttonPercent);
 
 
-        Button[] btns = {buttonNine,buttonEight, buttonSeven ,buttonSix,buttonFive, buttonFour, buttonThree, buttonTwo,  buttonOne, buttonZero};
-        for (Button btn : btns) {
+        buttonZero.setOnClickListener(this);
+        buttonOne.setOnClickListener(this);
+        buttonTwo.setOnClickListener(this);
+        buttonThree.setOnClickListener(this);
+        buttonFour.setOnClickListener(this);
+        buttonFive.setOnClickListener(this);
+        buttonSix.setOnClickListener(this);
+        buttonSeven.setOnClickListener(this);
+        buttonEight.setOnClickListener(this);
+        buttonNine.setOnClickListener(this);
+
+        buttonRightArrow.setOnClickListener(this);
+        buttonDiv.setOnClickListener(this);
+        buttonMultiply.setOnClickListener(this);
+        buttonSubtract.setOnClickListener(this);
+        buttonAdd.setOnClickListener(this);
+        buttonDecimal.setOnClickListener(this);
+        buttonC.setOnClickListener(this);
+        buttonEquals.setOnClickListener(this);
+        buttonToggle.setOnClickListener(this);
+
+        Button[] buttons = {buttonZero, buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight,
+                buttonNine, buttonRightArrow, buttonDiv, buttonMultiply, buttonSubtract, buttonAdd, buttonDecimal, buttonC,
+                buttonEquals, buttonToggle};
+        for (Button btn : buttons) {
             if (btn != null) {
 
                 buttonZero.setTypeface(tf, Typeface.BOLD);
@@ -80,69 +115,50 @@ public class CalculatorActivity extends Activity {
                 buttonThree.setTypeface(tf, Typeface.BOLD);
                 buttonTwo.setTypeface(tf, Typeface.BOLD);
                 buttonOne.setTypeface(tf, Typeface.BOLD);
-
-            }
-        }
-
-        ////
-        Button buttonRightArrow = (Button) findViewById(R.id.buttonRightArrow);
-        Button buttonDiv = (Button) findViewById(R.id.buttonDiv);
-        Button buttonMultiply = (Button) findViewById(R.id.buttonMultiply);
-        Button buttonSubtract = (Button) findViewById(R.id.buttonSubtract);
-        Button buttonAdd = (Button) findViewById(R.id.buttonAdd);
-        Button buttonPercent = (Button) findViewById(R.id.buttonPercent);
-        Button buttonDecimal = (Button) findViewById(R.id.buttonDecimal);
-        Button buttonC = (Button) findViewById(R.id.buttonClear);
-        Button buttonEquals = (Button) findViewById(R.id.buttonEquals);
-
-        Button buttonToggle = (Button) findViewById(R.id.buttonToggleSign);
-        Button buttonLeftPar = (Button) findViewById(R.id.buttonLeftPar);
-        Button buttonRightPar = (Button) findViewById(R.id.buttonRightPar);
-        //Button buttonSquared = (Button) findViewById(R.id.buttonSquared);
-        Button buttonTangent = (Button) findViewById(R.id.buttonTangent);
-        Button buttonCosine = (Button) findViewById(R.id.buttonCosine);
-        Button buttonSine = (Button) findViewById(R.id.buttonSine);
-        Button buttonSquareRoot = (Button) findViewById(R.id.buttonSquareRoot);
-        Button buttonln = (Button) findViewById(R.id.buttonln);
-
-
-        Button btns1[] = {buttonRightArrow, buttonDiv, buttonMultiply, buttonSubtract, buttonAdd,
-                buttonDecimal, buttonC,buttonEquals,
-                buttonToggle,buttonLeftPar, buttonRightPar, buttonTangent, buttonCosine,
-                buttonSine, buttonSquareRoot, buttonln };
-        for (Button aBtns1 : btns1) {
-            if (aBtns1 !=null) {
-
                 buttonRightArrow.setTypeface(tf, Typeface.BOLD);
                 buttonDiv.setTypeface(tf, Typeface.BOLD);
                 buttonMultiply.setTypeface(tf, Typeface.BOLD);
                 buttonSubtract.setTypeface(tf, Typeface.BOLD);
                 buttonAdd.setTypeface(tf, Typeface.BOLD);
+                buttonToggle.setTypeface(tf, Typeface.BOLD);
                 buttonDecimal.setTypeface(tf, Typeface.BOLD);
                 buttonEquals.setTypeface(tf, Typeface.BOLD);
                 buttonC.setTypeface(tf, Typeface.BOLD);
-                buttonToggle.setTypeface(tf, Typeface.BOLD);
-                
 
-          /*
+            }
+        }
 
+        Button[] buttons_land = {buttonLeftPar, buttonRightPar, buttonTangent, buttonCosine, buttonSine, buttonSquareRoot,
+                buttonln, buttonPercent};
 
+        for (Button btn : buttons_land) {
+            if (btn != null) {
+
+                buttonLeftPar.setOnClickListener(this);
+                buttonRightPar.setOnClickListener(this);
+                buttonTangent.setOnClickListener(this);
+                buttonCosine.setOnClickListener(this);
+                buttonSine.setOnClickListener(this);
+                buttonSquareRoot.setOnClickListener(this);
+                buttonln.setOnClickListener(this);
+                buttonPercent.setOnClickListener(this);
+
+                buttonPercent.setTypeface(tf, Typeface.BOLD);
                 buttonLeftPar.setTypeface(tf, Typeface.BOLD);
                 buttonRightPar.setTypeface(tf, Typeface.BOLD);
-                buttonSquared.setTypeface(tf, Typeface.BOLD);
                 buttonTangent.setTypeface(tf, Typeface.BOLD);
                 buttonCosine.setTypeface(tf, Typeface.BOLD);
                 buttonSine.setTypeface(tf, Typeface.BOLD);
                 buttonSquareRoot.setTypeface(tf, Typeface.BOLD);
-                buttonln.setTypeface(tf, Typeface.BOLD);*/
+                buttonln.setTypeface(tf, Typeface.BOLD);
             }
         }
 
         addVibrateListenersToButtons((ViewGroup) findViewById(R.id.rootView), new VibratorTouchListener());
-
     }
 
-    public void onButtonClick(View v) {
+    @Override
+    public void onClick(View v) {
 
         if (v != null) {
             final int id = v.getId();
@@ -223,9 +239,6 @@ public class CalculatorActivity extends Activity {
                 case R.id.buttonRightPar:
                     calculator.selectRightParenthesis();
                     break;
-          /*      case R.id.buttonSquared:
-                    calculator.selectSqrtX();
-                    break;*/
                 case R.id.buttonSquareRoot:
                     calculator.selectSqrtX();
                     break;
@@ -249,60 +262,45 @@ public class CalculatorActivity extends Activity {
     }
 
     private void updateOutput() {
-//        outputView.setText(df.format(calculator.getExpression()));
         outputView.setText(calculator.getExpression());
     }
 
 
     private void addVibrateListenersToButtons(ViewGroup root, VibratorTouchListener listener) {
-        if (root !=null) {
+        if (root != null) {
             final int childCount = root.getChildCount();
 
-        for (int i = 0; i < childCount; i++) {
-            final View child = root.getChildAt(i);
-
-            if (child instanceof Button) {
-                child.setOnTouchListener(listener);
-            } else if (child instanceof ViewGroup) {
-                addVibrateListenersToButtons((ViewGroup) child, listener);
+            for (int i = 0; i < childCount; i++) {
+                final View child = root.getChildAt(i);
+                if (child instanceof Button) {
+                    child.setOnTouchListener(listener);
+                } else if (child instanceof ViewGroup) {
+                    addVibrateListenersToButtons((ViewGroup) child, listener);
+                }
             }
-        }}
+        }
     }
 
-    /*
-    *
-    * This methods called right before we change orientation
-    * */
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-
         Log.i(TAG, "onSaveInstanceState");
         outState.putSerializable(CALCULATOR, calculator);
     }
 
 
-/*    *
-    * Display values in the UI that were saved right before orientation changed
-    * */
-
     @Override
     protected void onRestoreInstanceState(Bundle savedState) {
         super.onRestoreInstanceState(savedState);
         Log.i(TAG, "onRestoreInstanceState");
-        if (outputView !=null){
-
-          //  outputView.setText(df.format(calculator.getExpression()));
-
-           outputView.setText(calculator.getExpression());
+        if (outputView != null) {
+            outputView.setText(calculator.getExpression());
         }
         calculator = (Calculator) savedState.getSerializable(CALCULATOR);
 
         if (calculator != null) {
-          outputView.setText(calculator.getExpression());
-          //  outputView.setText(df.format(calculator.getExpression()));
-
+            outputView.setText(calculator.getExpression());
         }
     }
 }

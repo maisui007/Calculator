@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/BigDecimalPostfixEvaluator.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/DoublePostfixEvaluator.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/FloatPostfixEvaluator.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/NumberPrecision.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/PostfixEvaluator.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/ShuntingYardParser.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/builder/ExpressionBuilder.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/builder/StringNumberLiteral.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/exception/ParseException.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/BigDecimalNumberLiteral.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/DoubleNumberLiteral.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/FloatNumberLiteral.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/Identifier.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/Lexer.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/NumberLiteral.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/Operator.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/Parenthesis.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/PredefinedFunction.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/Separator.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nimda/calculator/calc/evaluator/lexer/Token.java" charset="windows-1251" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

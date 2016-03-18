@@ -6,17 +6,17 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
     <style name="FontTextView">
-
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/TextColor</item>
         <item name="android:textSize">45sp</item>
         <item name="android:background">@drawable/text_view_gradient</item>
         <item name="android:text">@string/outputTextView</item>
     </style>
-
 
     <style name="EquationButton" parent="@android:style/Widget.Button">
         <item name="android:gravity">center_vertical|center_horizontal</item>
@@ -26,7 +26,6 @@
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
     </style>
-
 
     <style name="NormalButton" parent="@android:style/Widget.Button">
         <item name="android:gravity">center_vertical|center_horizontal</item>
@@ -41,7 +40,6 @@
         <item name="android:gravity">center_vertical|center_horizontal</item>
         <item name="android:textColor">@color/EquationButtonColor</item>
         <item name="android:textSize">35sp</item>
-
         <item name="android:background">@drawable/button</item>
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
